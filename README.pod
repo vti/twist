@@ -1,0 +1,5 @@
+Twist is a Bootylicious on top of L<Dancer>. Just put Bootylicious anywhere where
+L<Dancer> can find it and enjoy. This is possible because Bootylicious has a
+separated model layer that is not really tied to a web framework.
+
+Work is still in progress...
