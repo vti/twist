@@ -1,0 +1,11 @@
+<div class="text">
+    <h1 class="title"><a href="<% h.article(article) %>"><% article.title %></a></h1>
+    <% INCLUDE 'article-meta' article = article %>
+    <div class="article-content">
+        <% r.render_content(article) %>
+    </div>
+<% INCLUDE 'article-pingbacks' pingbacks = article.pingbacks %>
+<% INCLUDE 'article-comments', comments = article.comments IF c.comments_enabled && article.comments.size %>
+<% INCLUDE 'article-comment-form' IF 0 && c.comments_enabled %>
+<% INCLUDE 'article-pager' next_article = article.next, prev_article = article.prev %>
+</div>

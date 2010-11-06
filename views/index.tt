@@ -1,0 +1,9 @@
+<% IF articles.size == 0 %>
+    <div class="text center">
+        Nothing here yet :(
+    </div>
+<% END %>
+<% WHILE (article = articles.next) %>
+    <% INCLUDE 'index-item' article = article %>
+<% END %>
+<% INCLUDE 'index-pager' pager = pager %>

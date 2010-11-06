@@ -1,0 +1,51 @@
+html, body {height: 100%;margin:0}
+body {background: #fff;font-family: Georgia, "Bitstream Charter", serif;line-height:25px}
+h1,h2,h3,h4,h5 {font-family: times, "Times New Roman", times-roman, serif; line-height: 40px; letter-spacing: -1px; color: #444; margin: 0 0 0 0; padding: 0 0 0 0; font-weight: 100;}
+a,a:active {color:#555}
+a:hover{color:#000}
+a:visited{color:#000}
+img{border:0px}
+pre{line-height:18px;border:2px solid #ccc;background:#eee;padding:1em;overflow:auto;overflow-y:visible;width:600px;}
+#body {width:65%;min-height:100%;height:auto !important;height:100%;margin:0 auto -6em;}
+#header {text-align:center;padding:2em 0em 0.5em 0em;border-bottom: 1px solid #000}
+h1#title{font-size:3em}
+h2#description{font-size:1.5em;color:#999}
+span#author {font-weight:bold}
+span#about {font-style:italic}
+#menu {padding-top:1em;text-align:right}
+#content {background:#FFFFFF}
+.article-meta {line-height:18px;color:#999;margin-left:10px;font-size:small;font-style:italic;padding-bottom:0.5em}
+.artcle-content {}
+.modified {margin:0px}
+.tags a{color:#999}
+.text {padding:2em;}
+.text h1.title {font-size:2.5em}
+.error {padding:2em;text-align:center}
+.more {margin-left:10px;padding-bottom:1em;}
+#pager {text-align:center;padding:2em; color:#ccc}}
+#pager span.active {color:#000}
+#pager span.arrow {background:#fff}
+#subfooter {padding:2em;border-top:#000000 1px solid}
+#footer{width:65%;margin:auto;font-size:80%;text-align:center;padding:2em 0em 2em 0em;border-top:#000000 1px solid;height:2em;}
+.center {text-align:center}
+.push {height:6em}
+input, textarea {font-size:150%;width:60%}
+input[type="submit"] {width:20%}
+textarea {height:200px}
+label {color:#999}
+.required {color:red}
+#pingbacks, #comments, #comment-form {padding:1em 0px}
+#pingbacks .content, #comments .content, #comment-form .content {padding-left:1em}
+#comments .comment .meta {line-height:18px;color:#999;margin-left:10px;font-size:small;font-style:italic;padding-bottom:0.5em}
+#comments .comment .author {font-weight:bold}
+#comments .comment .content {padding-bottom:2em}
+.tip {font-size:smaller;color:#bbb;font-style:italic;padding-left:1em}
+.tip a{color:#bbb}
+.tip-required {padding:1em 0px;}
+.tip-required-bot {font-style:italic;font-size:small;color:#999;line-height:18px}
+.content div.error {text-align:left;padding:0;color:red}
+img.gravatar {float:left; padding-right:0.5em}
+.comment-counter {color:#999;font-size:small;margin-left:10px}
+.comment-counter a {color:#999}
+
+

@@ -1,0 +1,16 @@
+    <div class="text">
+        <h1 class="title">
+            <a href="<% u.article(article) %>"><% article.title %></a>
+        </h1>
+        <% INCLUDE 'article-meta' article = article %>
+        <div class="article-content">
+            <% r.render_preview(article) %>
+        </div>
+        <% IF c.comments_enabled %>
+        <div class="comment-counter">
+            <a href="<% u.comments(article) %>">Comments</a>
+        </div>
+        <% END %>
+    </div>
+
+

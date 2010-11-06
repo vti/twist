@@ -1,0 +1,7 @@
+    <% while (article = articles.next) %>
+    <li>
+        <a href="<% h.article(article) %>"><% article.title %></a>
+        <br />
+        <% INCLUDE 'article-meta' article = article %>
+    </li>
+    <% END %>

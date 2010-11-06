@@ -1,0 +1,8 @@
+    <div class="article-meta">
+        <% h.date(article.created) %> by <% h.article_author(article) %>
+        <div class="tags">
+        <% FOREACH tag IN article.tags %>
+            <% tag.name %>
+        <% END %>
+        </div>
+    </div>

@@ -1,0 +1,11 @@
+    <div id="pager">
+    <span class="active">
+<% IF prev_article %>
+        <span class="arrow">&larr; </span><a href="<% u.article(prev_article) %>"><% prev_article.title %></a> &nbsp;
+<% END %>
+|
+<% IF next_article %>
+        &nbsp;<a href="<% u.article(next_article) %>"><% next_article.title %></a><span class="arrow"> &rarr;</span>
+<% END %>
+    </span>
+    </div>

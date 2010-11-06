@@ -1,0 +1,14 @@
+<% IF article.pingbacks.size %>
+
+<div id="pingbacks">
+    <h2>Pingbacks</h2>
+    <div class="content">
+        <ul>
+        <% while (pingback = pingbacks.next) %>
+            <li><% h.date(pingback.created) %> <a href="<% pingback.source_uri %>"><% pingback.source_uri %></a></li>
+        <% END %>
+        </ul>
+    </div>
+</div>
+
+<% END %>
