@@ -5,9 +5,6 @@ layout: "main"
 charset: "UTF-8"
 
 template: "caml"
-engines:
-    caml:
-        templates_path: "views"
 
 twist:
     author: "me"

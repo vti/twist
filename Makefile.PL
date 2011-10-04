@@ -4,9 +4,9 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME         => 'Twist',
-    AUTHOR       => q{YOUR NAME <youremail@example.com>},
+    AUTHOR       => q{vti <vti@cpan.org>},
     VERSION_FROM => 'lib/Twist.pm',
-    ABSTRACT     => 'YOUR APPLICATION ABSTRACT',
+    ABSTRACT     => 'Twist',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
         ? ('LICENSE' => 'perl')
         : ()),
@@ -15,7 +15,7 @@ WriteMakefile(
         'Test::More'             => 0,
         'YAML'                   => 0,
         'Dancer'                 => 1.3030,
-        'Dancer::Template::Caml' => 0
+        'Dancer::Template::Caml' => 0.009002
     },
     dist  => {COMPRESS => 'gzip -9f', SUFFIX => 'gz',},
     clean => {FILES    => 'Twist-*'},
