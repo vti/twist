@@ -1,0 +1,28 @@
+appname: "Twist"
+
+layout: "main"
+
+charset: "UTF-8"
+
+template: "caml"
+engines:
+    caml:
+        templates_path: "views"
+
+twist:
+    author: "me"
+    about: "Yet another Perl hacker"
+    title: "Hacking"
+    description: "Always hacking"
+    menu:
+        - title: "index"
+          link: "/"
+        - title: "tags"
+          link: "/tags.html"
+        - title: "archive"
+          link: "/archive.html"
+    page_limit: 10
+#    disqus:
+#        shortname: 'my-disqus-shortname'
+#        developer: 0
+
