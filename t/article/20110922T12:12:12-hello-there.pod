@@ -1,0 +1,8 @@
+Title: Hello
+Tags: foo, bar, baz
+
+Hello world!
+
+[cut] Foobar
+
+=head1 Hello!

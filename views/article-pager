@@ -1,11 +1,14 @@
-    <div id="pager">
+{{#pager}}
+<div id="pager">
     <span class="active">
-<% IF prev_article %>
-        <span class="arrow">&larr; </span><a href="<% u.article(prev_article) %>"><% prev_article.title %></a> &nbsp;
-<% END %>
+    {{#prev}}
+        <span class="arrow">&larr; </span><a
+        href="/articles/{{prev.created.year}}/{{prev.created.month}}/{{prev.name}}.html">{{prev.title}}</a> &nbsp;
+    {{/prev}}
 |
-<% IF next_article %>
-        &nbsp;<a href="<% u.article(next_article) %>"><% next_article.title %></a><span class="arrow"> &rarr;</span>
-<% END %>
+    {{#next}}
+        &nbsp;<a href="/articles/{{next.created.year}}/{{next.created.month}}/{{next.name}}.html">{{next.title}}</a><span class="arrow"> &rarr;</span>
+    {{/next}}
     </span>
-    </div>
+</div>
+{{/pager}}

@@ -1,0 +1,38 @@
+<!doctype html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="/styles.css" type="text/css" />
+        <link rel="alternate" type="application/rss+xml" title="<%= config 'title' %>" href="<%= href_to_rss %>" />
+        <meta name="generator" content="{{settings.twist.generator}}" />
+    </head>
+    <body>
+        <div id="body">
+            <div id="header">
+                <h1 id="title">
+                    <a href="/">{{settings.twist.title}}</a>
+                    <sup><a href="/index.rss"><img src="/rss.png" alt="RSS" /></a></sup>
+                </h1>
+                <h2 id="description">{{settings.twist.description}}</h2>
+                {{#settings.twist.author}}
+                <span id="author">{{settings.twist.author}}</span>,
+                {{/settings.twist.author}}
+                {{#settings.twist.about}}
+                <span id="about">{{settings.twist.about}}</span>
+                {{/settings.twist.about}}
+                <div id="menu">
+                    {{#settings.twist.menu}}
+                        <a href="{{link}}">{{title}}</a>
+                    {{/settings.twist.menu}}
+                </div>
+            </div>
+            <div id="content">
+                {{&content}}
+            </div>
+            <div class="push"></div>
+        </div>
+        <div id="footer">{{&settings.twist.footer}}</div>
+    </body>
+</html>
+
+

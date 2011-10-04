@@ -1,8 +1,17 @@
+{{#pager}}
     <div id="pager">
-        <a href="<% h.href_to_page('index', pager.prev_timestamp) %>">
-            <span class="arrow">&larr; </span>Later
-        </a>
-        <a href="<% h.href_to_page('index', pager.next_timestamp) %>">
-            Earlier<span class="arrow"> &rarr;</span>
-        </a>
+        {{#prev}}
+        <a href="/?timestamp={{prev}}"><span class="arrow">&larr; </span>Later</a>
+        {{/prev}}
+        {{^prev}}
+        <span class="arrow">&larr; </span>Later
+        {{/prev}}
+
+        {{#next}}
+        <a href="/?timestamp={{next}}">Earlier<span class="arrow"> &rarr;</span></a>
+        {{/next}}
+        {{^next}}
+        Earlier<span class="arrow"> &rarr;</span>
+        {{/next}}
     </div>
+{{/pager}}

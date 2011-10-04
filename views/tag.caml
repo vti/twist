@@ -1,0 +1,14 @@
+<div class="text">
+<h1>Tag {{tag}}
+<sup>
+<a href="/tags/{{tag}}.rss"><img src="/rss.png" alt="RSS" /></a>
+</sup>
+</h1>
+<br />
+{{#articles}}
+    <h2 class="title">
+        <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html">{{title}}</a>
+    </h2>
+    {{>article-meta}}
+{{/articles}}
+</div>

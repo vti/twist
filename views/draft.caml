@@ -1,3 +1,4 @@
+{{#article}}
     <div class="text">
         <h1 class="title">
             <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html">{{title}}</a>
@@ -6,10 +7,9 @@
         <div class="article-content">
             {{#preview}}
                 {{&preview}}
-                <div class="more">&rarr; <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html#cut">{{preview_link}}</a></div>
             {{/preview}}
-            {{^preview}}
-                {{&content}}
-            {{/preview}}
+
+            {{&content}}
         </div>
     </div>
+{{/article}}

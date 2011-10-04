@@ -1,0 +1,18 @@
+<div class="text">
+    <h1>Archive</h1>
+    <br />
+    {{#years}}
+        <h2>{{year}}</h2>
+        <div style="margin-left:2em">
+            {{#months}}
+            {{month}}
+            <div style="margin-left:2em">
+            {{#articles}}
+                <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html">{{title}}</a>
+                {{>article-meta}}
+            {{/articles}}
+            </div>
+            {{/months}}
+        </div>
+    {{/years}}
+</div>

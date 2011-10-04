@@ -1,0 +1,27 @@
+    <channel>
+        <title>{{settings.twist.title}}</title>
+        <link>{{settings.twist.base}}index.rss</link>
+        <description>{{settings.twist.description}}</description>
+        <pubDate>{{pub_date}}</pubDate>
+        <generator>{{settings.twist.generator}}</generator>
+        {{#articles}}
+        <item>
+          <title>{{title}}</title>
+          <link>{{settings.twist.base}}articles/{{created.year}}/{{created.month}}/{{slug}}.html</link>
+          <description><![CDATA[
+            {{#preview}}
+            {{&preview}}
+            &rarr; <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html#cut">{{preview_link}}</a>
+            {{/preview}}
+            {{^preview}}
+            {{&content}}
+            {{/preview}}
+          ]]></description>
+          {{#tags}}
+          <category>{{.}}</category>
+          {{/tags}}
+          <pubDate>{{created.to_rss}}</pubDate>
+          <guid>{{settings.twist.base}}articles/{{created.year}}/{{created.month}}/{{slug}}.html</guid>
+        </item>
+        {{/articles}}
+    </channel>

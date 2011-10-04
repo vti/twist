@@ -1,8 +1,8 @@
     <div class="article-meta">
-        <% h.date(article.created) %> by <% h.article_author(article) %>
+        {{created}} by {{author}}
         <div class="tags">
-        <% FOREACH tag IN article.tags %>
-            <% tag.name %>
-        <% END %>
+        {{#tags}}
+{{^_first}}, {{/_first}}<a href="/tags/{{.}}.html">{{.}}</a>
+        {{/tags}}
         </div>
     </div>

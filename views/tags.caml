@@ -1,0 +1,12 @@
+<div class="text">
+    <h1>Tags</h1>
+    <br />
+    <div class="tags">
+{{#tags}}
+        <a href="/tags/{{name}}.html">{{name}}</a>
+        <sub>({{count}})</sub>
+{{/tags}}
+    </div>
+</div>
+
+
