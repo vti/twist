@@ -33,7 +33,7 @@
         </div>
         <div id="footer">{{&settings.twist.footer}}</div>
 
-        {{#urchin}}
+        {{#settings.twist.urchin}}
         <script type="text/javascript">
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', '{{urchin}}']);
@@ -45,6 +45,6 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
         </script>
-        {{/urchin}}
+        {{/settings.twist.urchin}}
     </body>
 </html>
