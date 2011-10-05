@@ -19,6 +19,7 @@ twist:
         - title: "archive"
           link: "/archive.html"
     page_limit: 10
+    comments: "disqus"
 #    disqus:
 #        shortname: 'my-disqus-shortname'
 #        developer: 0
