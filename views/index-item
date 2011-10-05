@@ -11,5 +11,6 @@
             {{^preview}}
                 {{&content}}
             {{/preview}}
+            <div class="comment-counter"><a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html#disqus_thread">{{title}}</a></div>
         </div>
     </div>
