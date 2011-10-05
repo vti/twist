@@ -76,7 +76,7 @@ get '/articles/:year/:month/:slug.html' => sub {
         return template 'not_found';
     }
 
-    template 'article' => {article => $article};
+    template 'article' => {title => $article->title, article => $article};
 };
 
 get '/drafts/:slug.html' => sub {
@@ -92,7 +92,7 @@ get '/drafts/:slug.html' => sub {
         return template 'not_found';
     }
 
-    template 'draft' => {article => $article};
+    template 'draft' => {title => $article->title, article => $article};
 };
 
 get '/archive.html' => sub {
@@ -101,13 +101,13 @@ get '/archive.html' => sub {
         article_args => {default_author => setting('twist')->{author}}
     )->archive;
 
-    template 'archive' => {years => $years};
+    template 'archive' => {title => 'Archive', years => $years};
 };
 
 get '/tags.html' => sub {
     my $tag_cloud = Twist::TagCloud->new(path => $articles_root);
 
-    template 'tags' => {tags => $tag_cloud->cloud};
+    template 'tags' => {title => 'Tags', tags => $tag_cloud->cloud};
 };
 
 get '/tags/:tag.html' => sub {
@@ -123,7 +123,7 @@ get '/tags/:tag.html' => sub {
         limit  => setting('twist')->{page_limit}
       );
 
-    template 'tag' => {articles => $articles, tag => $tag};
+    template 'tag' => {title => $tag, articles => $articles, tag => $tag};
 };
 
 get '/tags/:tag.rss' => sub {
