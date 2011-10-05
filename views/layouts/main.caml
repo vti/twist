@@ -9,11 +9,11 @@
     <body>
         <div id="body">
             <div id="header">
-                <h1 id="title">
+                <div id="title">
                     <a href="/">{{settings.twist.title}}</a>
                     <sup><a href="/index.rss"><img src="/rss.png" alt="RSS" /></a></sup>
-                </h1>
-                <h2 id="description">{{settings.twist.description}}</h2>
+                </div>
+                <div id="description">{{settings.twist.description}}</div>
                 {{#settings.twist.author}}
                 <span id="author">{{settings.twist.author}}</span>,
                 {{/settings.twist.author}}
@@ -34,5 +34,3 @@
         <div id="footer">{{&settings.twist.footer}}</div>
     </body>
 </html>
-
-

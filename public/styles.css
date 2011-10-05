@@ -9,8 +9,8 @@ pre{line-height:18px;border:2px solid #ccc;background:#eee;padding:1em;overflow:
 blockquote{border:2px solid #ccc;background:#eee;padding:1em}
 #body {width:65%;min-height:100%;height:auto !important;height:100%;margin:0 auto -6em;}
 #header {text-align:center;padding:2em 0em 0.5em 0em;border-bottom: 1px solid #000}
-h1#title{font-size:3em}
-h2#description{font-size:1.5em;color:#999}
+#title{font-size:3em;font-family: times, "Times New Roman", times-roman, serif; line-height: 40px; letter-spacing: -1px; color: #444; margin: 0 0 0 0; padding: 0 0 0 0; font-weight: 100;}
+#description{font-size:1.5em;color:#999;font-family: times, "Times New Roman", times-roman, serif; line-height: 40px; letter-spacing: -1px; color: #444; margin: 0 0 0 0; padding: 0 0 0 0; font-weight: 100;}
 span#author {font-weight:bold}
 span#about {font-style:italic}
 #menu {padding-top:1em;text-align:right}
