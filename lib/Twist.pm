@@ -12,6 +12,7 @@ our $VERSION = '0.1';
 
 my $articles_root = File::Spec->catfile(setting('appdir'), 'articles');
 my $drafts_root   = File::Spec->catfile(setting('appdir'), 'drafts');
+my $pages_root    = File::Spec->catfile(setting('appdir'), 'pages');
 
 my $preprocessor = Twist::Preprocessor->new;
 my $renderer     = Twist::Renderer->new;
@@ -93,6 +94,22 @@ get '/drafts/:slug.html' => sub {
     }
 
     template 'draft' => {title => $article->title, article => $article};
+};
+
+get '/pages/:slug.html' => sub {
+    my $slug = params->{slug};
+
+    my $page = Twist::Articles->new(
+        path         => $pages_root,
+        article_args => {default_author => setting('twist')->{author}}
+    )->find(slug => $slug);
+
+    if (!$page) {
+        status 'not_found';
+        return template 'not_found';
+    }
+
+    template 'page' => {title => $page->title, page => $page};
 };
 
 get '/archive.html' => sub {
