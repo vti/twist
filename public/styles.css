@@ -1,50 +1,193 @@
-html, body {height: 100%;margin:0}
-body {background: #fff;font-family: Georgia, "Bitstream Charter", serif;line-height:25px}
-h1,h2,h3,h4,h5 {font-family: times, "Times New Roman", times-roman, serif; line-height: 40px; letter-spacing: -1px; color: #444; margin: 0 0 0 0; padding: 0 0 0 0; font-weight: 100;}
-a,a:active {color:#555}
-a:hover{color:#000}
-a:visited{color:#000}
-img{border:0px}
-pre{line-height:18px;border:2px solid #ccc;background:#eee;padding:1em;overflow:auto;overflow-y:visible;width:600px;}
-blockquote{border:2px solid #ccc;background:#eee;padding:1em}
-#body {width:65%;min-height:100%;height:auto !important;height:100%;margin:0 auto -6em;}
-#header {text-align:center;padding:2em 0em 0.5em 0em;border-bottom: 1px solid #000}
-#title{font-size:3em;font-family: times, "Times New Roman", times-roman, serif; line-height: 40px; letter-spacing: -1px; color: #444; margin: 0 0 0 0; padding: 0 0 0 0; font-weight: 100;}
-#description{font-size:1.5em;color:#999;font-family: times, "Times New Roman", times-roman, serif; line-height: 40px; letter-spacing: -1px; color: #444; margin: 0 0 0 0; padding: 0 0 0 0; font-weight: 100;}
-span#author {font-weight:bold}
-span#about {font-style:italic}
-#menu {padding-top:1em;text-align:right}
-#content {background:#FFFFFF}
-.article-meta {line-height:18px;color:#999;margin-left:10px;font-size:small;font-style:italic;padding-bottom:0.5em}
-.artcle-content {}
-.modified {margin:0px}
-.tags a{color:#999}
-.text {padding:2em;}
-.text h1.title {font-size:2.5em}
-.error {padding:2em;text-align:center}
-.more {margin-left:10px;padding-bottom:1em;}
-#pager {text-align:center;padding:2em; color:#ccc}}
-#pager span.active {color:#000}
-#pager span.arrow {background:#fff}
-#subfooter {padding:2em;border-top:#000000 1px solid}
-#footer{width:65%;margin:auto;font-size:80%;text-align:center;padding:2em 0em 2em 0em;border-top:#000000 1px solid;height:2em;}
-.center {text-align:center}
-.push {height:6em}
-input.comment, textarea {font-size:150%;width:60%}
-textarea {height:200px}
-label {color:#999}
-.required {color:red}
-#pingbacks, #comments, #comment-form {padding:1em 0px}
-#pingbacks .content, #comments .content, #comment-form .content {padding-left:1em}
-#comments .comment .meta {line-height:18px;color:#999;margin-left:10px;font-size:small;font-style:italic;padding-bottom:0.5em}
-#comments .comment .author {font-weight:bold}
-#comments .comment .content {padding-bottom:2em}
-.tip {font-size:smaller;color:#bbb;font-style:italic;padding-left:1em}
-.tip a{color:#bbb}
-.tip-required {padding:1em 0px;}
-.tip-required-bot {font-style:italic;font-size:small;color:#999;line-height:18px}
-.comment-tags {font-style:italic;font-size:small;color:#999;line-height:18px;margin-bottom:1em}
-.content div.error {text-align:left;padding:0;color:red}
-img.gravatar {float:left; padding-right:0.5em}
-.comment-counter {color:#999;font-size:small;margin-left:10px}
-.comment-counter a {color:#999}
+html, body {
+    height: 100%;
+    margin:0
+}
+body {
+    background: #fff;
+    font: 18px/25px Palatino,"Palatino Linotype",serif;
+    line-height:25px
+}
+h1, h2, h3, h4, h5 {
+    line-height: 40px;
+    /*letter-spacing: 2px;*/
+    color: #000;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-weight: bold;
+}
+h1 {
+    font-family: times, "Times New Roman", times-roman, serif;
+    font-size:150%;
+    font-weight: normal;
+}
+h2 {
+    font-size:140%;
+}
+h3 {
+    font-size:130%;
+}
+h4 {
+    font-size:120%;
+}
+h5 {
+    font-size:110%;
+}
+h1 a, h1 a:active, h1 a:visited {
+    color:#000
+}
+#menu a, #menu a:active, #menu a:visited {
+    color:#000
+}
+a, a:active {
+    color:#6699CC
+}
+a:visited {
+    color:#FF6666
+}
+img {
+    border:0px
+}
+pre {
+    line-height:16px;
+    border-left:10px solid #dce5ef;
+    /*border:1px solid #99CCFF;*/
+    background:#f7f5ff;
+    padding-top:1em;
+    padding-bottom:1em;
+    margin-left:1em;
+    overflow:auto;
+    overflow-y:visible;
+    width:600px;
+}
+code {
+    border:1px solid #dce5ef;
+}
+code, pre {
+    font-family: "Courier New",monospace;
+    font-size: 14px;
+}
+blockquote{
+    border:2px solid #ccc;
+    background:#eee;
+    padding:1em
+}
+#body {
+    width:65%;
+    min-height:100%;
+    height:auto !important;
+    height:100%;
+    margin:0 auto -6em;
+
+}
+#header {
+    text-align:center;
+    padding:2em 0em 0.5em 0em;
+    border-bottom: 1px solid #000
+}
+#title{
+    font-size:2.5em;
+    font-family: times, "Times New Roman", times-roman, serif;
+    line-height: 40px;
+    letter-spacing: -1px;
+    color: #444;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-weight: 100;
+}
+#title a, #title a:active, #title a:visited {
+    text-decoration:none;
+    color:#000
+}
+#description{
+    font-size:1.5em;
+    color:#999;
+    font-family: times, "Times New Roman", times-roman, serif;
+    line-height: 40px;
+    letter-spacing: -1px;
+    color: #444;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-weight: 100;
+}
+span#author {
+    font-weight:bold
+}
+span#about {
+    font-style:italic
+}
+#menu {
+    padding-top:1em;
+    text-align:right
+}
+#content {
+    background:#FFFFFF
+}
+.article-meta {
+    line-height:18px;
+    color:#999;
+    margin-left:10px;
+    font-size:small;
+    font-style:italic;
+    padding-bottom:0.5em
+}
+.artcle-content {
+
+}
+.modified {
+    margin:0px
+}
+.tags a{
+    color:#999
+}
+.text {
+    padding:2em;
+
+}
+.text h1.title {
+    font-size:2.5em
+}
+.more {
+    margin-left:10px;
+    padding-bottom:1em;
+
+}
+#pager {
+    text-align:center;
+    padding:2em;
+    color:#ccc
+}
+#pager span.active {
+    color:#000
+}
+#pager span.arrow {
+    background:#fff
+}
+#subfooter {
+    padding:2em;
+    border-top:#000000 1px solid
+}
+#footer{
+    width:65%;
+    margin:auto;
+    font-size:80%;
+    text-align:center;
+    padding:2em 0em 2em 0em;
+    border-top:#000000 1px solid;
+    height:2em;
+}
+.center {
+    text-align:center
+}
+.push {
+    height:6em
+}
+input.comment, textarea {
+    font-size:150%;
+    width:60%
+}
+textarea {
+    height:200px
+}
+label {
+    color:#999
+}
