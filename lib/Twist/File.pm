@@ -56,11 +56,12 @@ sub format {
 
     my $filename = File::Basename::basename($self->path);
 
+    my $format = '';
     if ($filename =~ m/\.([^\.]+)$/) {
-        return $1;
+        return $format = $1;
     }
 
-    return '';
+    return $format;
 }
 
 sub slurp {
@@ -74,9 +75,7 @@ sub slurp {
 sub _stat {
     my $self = shift;
 
-    return $self->{stat} if $self->{stat};
-
-    return $self->{stat} = stat $self->path;
+    return stat $self->path;
 }
 
 1;
