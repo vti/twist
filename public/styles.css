@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
 }
 h1 {
+    margin-top:0px;
     font-family: times, "Times New Roman", times-roman, serif;
     font-size:150%;
     font-weight: normal;
