@@ -5,7 +5,7 @@
     <div class="article-content">
         {{#preview}}
         {{&preview}}
-        <a name="cut"></a>
+        <a id="cut"></a>
         {{/preview}}
         {{&content}}
     </div>
