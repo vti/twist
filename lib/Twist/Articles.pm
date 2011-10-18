@@ -7,7 +7,6 @@ use base 'Twist::Base';
 
 use Twist::Article;
 use Twist::Directory;
-use Twist::TagCloud;
 
 sub BUILD {
     my $self = shift;
