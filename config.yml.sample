@@ -19,8 +19,7 @@ twist:
         - title: "archive"
           link: "/archive.html"
     page_limit: 10
-    comments: "disqus"
+#    urchin: 'UA-123456-1'
 #    disqus:
 #        shortname: 'my-disqus-shortname'
 #        developer: 0
-
