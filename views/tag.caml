@@ -6,9 +6,7 @@
 </h1>
 <br />
 {{#articles}}
-    <h2 class="title">
-        <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html">{{title}}</a>
-    </h2>
+    <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html">{{title}}</a>
     {{>article-meta}}
 {{/articles}}
 </div>
