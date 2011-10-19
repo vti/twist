@@ -9,6 +9,8 @@ use Encode ();
 use File::stat;
 use File::Basename ();
 
+use constant FILE_SLURP => eval { require File::Slurp; 1 };
+
 use Twist::Date;
 
 sub path {
@@ -20,14 +22,18 @@ sub path {
 sub created {
     my $self = shift;
 
+    return $self->{created} if $self->{created};
+
     my ($prefix) = File::Basename::basename($self->path) =~ m/^(.*?)-/;
 
     if ($prefix && Twist::Date->is_date($prefix)) {
-        return Twist::Date->new(timestamp => $prefix);
+        $self->{created} = Twist::Date->new(timestamp => $prefix);
     }
     else {
-        return $self->modified;
+        $self->{created} = $self->modified;
     }
+
+    return $self->{created};
 }
 
 sub modified {
@@ -39,6 +45,8 @@ sub modified {
 sub filename {
     my $self = shift;
 
+    return $self->{filename} if $self->{filename};
+
     my $filename = File::Basename::basename($self->path);
 
     my ($prefix) = $filename =~ m/^(.*?)-/;
@@ -48,26 +56,31 @@ sub filename {
 
     $filename =~ s/\.[^\.]+$//;
 
-    return $filename;
+    return $self->{filename} = $filename;
 }
 
 sub format {
     my $self = shift;
 
+    return $self->{format} if $self->{format};
+
     my $filename = File::Basename::basename($self->path);
 
     my $format = '';
     if ($filename =~ m/\.([^\.]+)$/) {
-        return $format = $1;
+        $format = $1;
     }
 
-    return $format;
+    return $self->{format} = $format;
 }
 
 sub slurp {
     my $self = shift;
 
-    my $slurp = do { local $/; open my $fh, '<', $self->path or die $!; <$fh> };
+    my $slurp =
+      FILE_SLURP
+      ? File::Slurp::read_file($self->path)
+      : do { local $/; open my $fh, '<', $self->path or die $!; <$fh> };
 
     return Encode::decode('UTF-8', $slurp);
 }
