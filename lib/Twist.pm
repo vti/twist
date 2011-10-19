@@ -5,6 +5,7 @@ use Twist::Archive;
 use Twist::Article;
 use Twist::Articles;
 use Twist::Pager;
+use Twist::TagCloud;
 
 our $VERSION = '0.1';
 
