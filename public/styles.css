@@ -84,7 +84,7 @@ blockquote{
 #header {
     text-align:center;
     padding:2em 0em 0.5em 0em;
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid #ccc
 }
 #title{
     font-size:2.5em;
@@ -174,7 +174,7 @@ span#about {
     font-size:80%;
     text-align:center;
     padding:2em 0em 2em 0em;
-    border-top:#000000 1px solid;
+    border-top:#ccc 1px solid;
     height:2em;
 }
 .center {
