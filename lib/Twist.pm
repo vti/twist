@@ -5,17 +5,12 @@ use Twist::Archive;
 use Twist::Article;
 use Twist::Articles;
 use Twist::Pager;
-use Twist::Preprocessor;
-use Twist::Renderer;
 
 our $VERSION = '0.1';
 
 my $articles_root = File::Spec->catfile(setting('appdir'), 'articles');
 my $drafts_root   = File::Spec->catfile(setting('appdir'), 'drafts');
 my $pages_root    = File::Spec->catfile(setting('appdir'), 'pages');
-
-my $preprocessor = Twist::Preprocessor->new;
-my $renderer     = Twist::Renderer->new;
 
 before_template sub {
     my $tokens = shift;
