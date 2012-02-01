@@ -28,6 +28,18 @@ describe 'file' => sub {
         is($file->created, 'Thu, 22 Sep 2011');
     };
 
+    it 'should return correct creation time without separator' => sub {
+        my $file = Twist::File->new(path => 't/file/20110922T121212-hello.pod');
+
+        is($file->created, 'Thu, 22 Sep 2011');
+    };
+
+    it 'should return correct creation date without time' => sub {
+        my $file = Twist::File->new(path => 't/file/20110922-hello.pod');
+
+        is($file->created, 'Thu, 22 Sep 2011');
+    };
+
     it 'should return correct format' => sub {
         my $file = Twist::File->new(path => 't/file/20110922T12:12:12-hello-there.pod');
 
