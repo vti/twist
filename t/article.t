@@ -11,7 +11,7 @@ describe 'article' => sub {
     it 'should load article' => sub {
         my $article = Twist::Article->new(
             file => Twist::File->new(
-                path => 't/article/20110922T12:12:12-hello-there.pod'
+                path => 't/article/20110922T121212-hello-there.pod'
             )
         );
 
