@@ -15,7 +15,7 @@ use Twist::File;
 sub BUILD {
     my $self = shift;
 
-    $self->{ignore} ||= ['^.', '~$'];
+    $self->{ignore} ||= [qr/^\./, qr/\~$/];
 
     $self->{ignore_re} = join '|', @{$self->{ignore}};
     $self->{ignore_re} = qr/$self->{ignore_re}/;
@@ -43,7 +43,7 @@ sub _files {
     my @files;
     opendir my $dh, $self->{path} or die "Can't open `$self->{path}`: $!";
     while (my $file = readdir $dh) {
-        next if $file =~ $self->{ignore};
+        next if $file =~ $self->{ignore_re};
 
         $file = File::Spec->catfile($self->{path}, $file);
         next unless -f $file;
