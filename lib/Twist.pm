@@ -4,6 +4,7 @@ use Dancer ':syntax';
 use Twist::Archive;
 use Twist::Article;
 use Twist::Articles;
+use Twist::Date;
 use Twist::Pager;
 use Twist::TagCloud;
 
@@ -53,9 +54,13 @@ get '/index.rss' => sub {
     )->find_all(limit => setting('twist')->{page_limit});
 
     template
-      'rss/articles' =>
-      {pub_date => $articles->[0]->created->to_rss, articles => $articles},
-      {layout   => 'rss'};
+      'rss/articles' => {
+        pub_date => @$articles
+        ? $articles->[0]->created->to_rss
+        : Twist::Date->new(epoch => time)->to_rss,
+        articles => $articles
+      },
+      {layout => 'rss'};
 };
 
 get '/articles/:year/:month/:slug.html' => sub {
