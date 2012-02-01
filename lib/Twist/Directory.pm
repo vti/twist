@@ -12,6 +12,15 @@ use Time::HiRes qw(stat);
 
 use Twist::File;
 
+sub BUILD {
+    my $self = shift;
+
+    $self->{ignore} ||= ['^.', '~$'];
+
+    $self->{ignore_re} = join '|', @{$self->{ignore}};
+    $self->{ignore_re} = qr/$self->{ignore_re}/;
+}
+
 sub files {
     my $self = shift;
 
@@ -34,7 +43,7 @@ sub _files {
     my @files;
     opendir my $dh, $self->{path} or die "Can't open `$self->{path}`: $!";
     while (my $file = readdir $dh) {
-        next if $file =~ m/^\./;
+        next if $file =~ $self->{ignore};
 
         $file = File::Spec->catfile($self->{path}, $file);
         next unless -f $file;
