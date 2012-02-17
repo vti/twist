@@ -22,6 +22,16 @@ describe 'preprocessor' => sub {
         );
     };
 
+    it 'should parse article with \r' => sub {
+        is_deeply(
+            $preprocessor->parse("Hello there\r\n[cut] Foobar\r\nAnd here"),
+            {   preview      => 'Hello there',
+                preview_link => 'Foobar',
+                content      => 'And here'
+            }
+        );
+    };
+
     it 'should parse article without preview_link' => sub {
         is_deeply(
             $preprocessor->parse("Hello there\n[cut]\nAnd here"),
