@@ -1,37 +1,61 @@
 <!doctype html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <title>{{#title}}{{title}}{{/title}}{{^title}}{{settings.twist.title}}{{/title}}</title>
-        <link rel="stylesheet" href="/styles.css" type="text/css" />
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.min.css" type="text/css" />
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="{{settings.twist.title}}" href="/index.rss" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content="{{settings.twist.generator}}" />
     </head>
     <body>
-        <div id="body">
-            <div id="header">
-                <div id="title">
-                    <a href="/">{{settings.twist.title}}</a>
-                    <sup><a href="/index.rss"><img src="/rss.png" alt="RSS" /></a></sup>
-                </div>
-                <div id="description">{{settings.twist.description}}</div>
-                {{#settings.twist.author}}
-                <span id="author">{{settings.twist.author}}</span>,
-                {{/settings.twist.author}}
-                {{#settings.twist.about}}
-                <span id="about">{{settings.twist.about}}</span>
-                {{/settings.twist.about}}
-                <div id="menu">
-                    {{#settings.twist.menu}}
-                        <a href="{{link}}">{{title}}</a>
-                    {{/settings.twist.menu}}
+        <div class="container">
+        <div class="row">
+            <div class="span3">&nbsp;</div>
+            <div class="span6">
+                <div class="page-header">
+                    <div id="header">
+                        <div id="title">
+                            <a href="/">{{settings.twist.title}}</a>
+                            <sup><a href="/index.rss"><img src="/rss.png" alt="RSS" /></a></sup>
+                        </div>
+                        <div id="description">{{settings.twist.description}}</div>
+                        {{#settings.twist.author}}
+                        <span id="author">{{settings.twist.author}}</span>,
+                        {{/settings.twist.author}}
+                        {{#settings.twist.about}}
+                        <span id="about">{{settings.twist.about}}</span>
+                        {{/settings.twist.about}}
+                        <div class="menu">
+                            {{#settings.twist.menu}}
+                            <a href="{{link}}">{{title}}</a>
+                            {{/settings.twist.menu}}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="content">
-                {{&content}}
-            </div>
-            <div class="push"></div>
+            <div class="span3">&nbsp;</div>
         </div>
-        <div id="footer">{{&settings.twist.footer}}</div>
+
+        <div class="row">
+            <div class="span3">&nbsp;</div>
+            <div class="span6">
+            {{&content}}
+            </div>
+            <div class="span3">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="span3">&nbsp;</div>
+            <div class="span6">
+                <div id="footer">
+                {{&settings.twist.footer}}
+                </div>
+            </div>
+            <div class="span3">&nbsp;</div>
+        </div>
+        </div>
 
         {{#settings.twist.urchin}}
         <script type="text/javascript">

@@ -1,7 +1,7 @@
     <div class="text">
-        <h1 class="title">
+        <h2 class="title">
             <a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html">{{title}}</a>
-        </h1>
+        </h2>
         {{>article-meta}}
         <div class="article-content">
             {{#preview}}
@@ -11,6 +11,7 @@
             {{^preview}}
                 {{&content}}
             {{/preview}}
-            <div class="comment-counter"><a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html#disqus_thread">{{title}}</a></div>
+            <div class="comment-counter pull-right"><a href="/articles/{{created.year}}/{{created.month}}/{{slug}}.html#disqus_thread">{{title}}</a></div>
+            <div style="clear:both"></div>
         </div>
     </div>

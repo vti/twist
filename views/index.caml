@@ -4,7 +4,7 @@
     </div>
 {{/articles}}
 {{#articles}}
-    {{>index-item}}
+    {{>index-item}}<br />
 {{/articles}}
 
 {{>index-pager}}

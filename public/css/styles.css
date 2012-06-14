@@ -1,0 +1,73 @@
+#header {
+    text-align:center;
+}
+#title{
+    font-size:120%;
+    font-weight:bold;
+    /*font-size:2.5em;*/
+    /*font-family: times, "Times New Roman", times-roman, serif;*/
+    /*line-height: 40px;*/
+    /*letter-spacing: -1px;*/
+    /*color: #444;*/
+    /*margin: 0 0 0 0;*/
+    /*padding: 0 0 0 0;*/
+    /*font-weight: 100;*/
+}
+h1, h2 {
+    line-height: 27px;
+}
+pre, code {
+    font-size:13px;
+}
+#title a, #title a:active, #title a:visited {
+    text-decoration:none;
+    color:#000
+}
+span#author {
+    font-weight:bold
+}
+span#about {
+    font-style:italic
+}
+.menu {
+    font-size:small;
+    padding-top:1em;
+    text-align:right
+}
+.article-meta {
+    line-height:18px;
+    color:#999;
+    margin-left:10px;
+    font-size:small;
+    font-style:italic;
+    padding-bottom:0.5em
+}
+.tags a {
+    color:#999;
+    text-decoration:underline;
+}
+.more {
+    margin-left:10px;
+    /*padding-bottom:1em;*/
+    font-size:small;
+}
+.comment-counter {
+    font-size:small;
+}
+#pager {
+    text-align:center;
+    padding:2em;
+    color:#ccc
+}
+#pager span.active {
+    color:#000
+}
+#pager span.arrow {
+    background:#fff
+}
+#footer{
+    text-align:center;
+    padding:2em 0em 2em 0em;
+    border-top:#ccc 1px solid;
+    height:2em;
+}
