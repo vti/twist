@@ -3,7 +3,7 @@
     <br />
     <div class="tags">
 {{#tags}}
-        <a href="/tags/{{name}}.html">{{name}}</a>
+        <a href="/tags/{{#uri_escape}}{{name}}{{/uri_escape}}.html">{{name}}</a>
         <sub>({{count}})</sub>
 {{/tags}}
     </div>

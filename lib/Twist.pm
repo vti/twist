@@ -1,6 +1,7 @@
 package Twist;
 use Dancer ':syntax';
 
+use URI::Escape;
 use Twist::Archive;
 use Twist::Article;
 use Twist::Articles;
@@ -9,6 +10,8 @@ use Twist::Pager;
 use Twist::TagCloud;
 
 our $VERSION = '0.1';
+
+my %default_vars = (uri_escape => sub { URI::Escape::uri_escape($_[1]) });
 
 my $articles_root = File::Spec->catfile(setting('appdir'), 'articles');
 my $drafts_root   = File::Spec->catfile(setting('appdir'), 'drafts');
@@ -42,7 +45,8 @@ get '/' => sub {
         limit  => setting('twist')->{page_limit}
     );
 
-    template 'index' => {articles => $articles, pager => $pager};
+    template 'index' =>
+      {%default_vars, articles => $articles, pager => $pager};
 };
 
 get '/index.rss' => sub {
@@ -55,6 +59,7 @@ get '/index.rss' => sub {
 
     template
       'rss/articles' => {
+        %default_vars,
         pub_date => @$articles
         ? $articles->[0]->created->to_rss
         : Twist::Date->new(epoch => time)->to_rss,
@@ -78,7 +83,11 @@ get '/articles/:year/:month/:slug.html' => sub {
         return template 'not_found';
     }
 
-    template 'article' => {title => $article->title, article => $article};
+    template 'article' => {
+        %default_vars,
+        title   => $article->title,
+        article => $article
+    };
 };
 
 get '/drafts/:slug.html' => sub {
@@ -94,7 +103,11 @@ get '/drafts/:slug.html' => sub {
         return template 'not_found';
     }
 
-    template 'draft' => {title => $article->title, article => $article};
+    template 'draft' => {
+        %default_vars,
+        title   => $article->title,
+        article => $article
+    };
 };
 
 get '/pages/:slug.html' => sub {
@@ -110,7 +123,11 @@ get '/pages/:slug.html' => sub {
         return template 'not_found';
     }
 
-    template 'page' => {title => $page->title, page => $page};
+    template 'page' => {
+        %default_vars,
+        title => $page->title,
+        page  => $page
+    };
 };
 
 get '/archive.html' => sub {
@@ -119,13 +136,21 @@ get '/archive.html' => sub {
         article_args => {default_author => setting('twist')->{author}}
     )->archive;
 
-    template 'archive' => {title => 'Archive', years => $years};
+    template 'archive' => {
+        %default_vars,
+        title => 'Archive',
+        years => $years
+    };
 };
 
 get '/tags.html' => sub {
     my $tag_cloud = Twist::TagCloud->new(path => $articles_root);
 
-    template 'tags' => {title => 'Tags', tags => $tag_cloud->cloud};
+    template 'tags' => {
+        %default_vars,
+        title => 'Tags',
+        tags  => $tag_cloud->cloud,
+    };
 };
 
 get '/tags/:tag.html' => sub {
@@ -141,7 +166,12 @@ get '/tags/:tag.html' => sub {
         limit  => setting('twist')->{page_limit}
       );
 
-    template 'tag' => {title => $tag, articles => $articles, tag => $tag};
+    template 'tag' => {
+        %default_vars,
+        title    => $tag,
+        articles => $articles,
+        tag      => $tag
+    };
 };
 
 get '/tags/:tag.rss' => sub {
@@ -155,6 +185,7 @@ get '/tags/:tag.rss' => sub {
 
     template
       'rss/tag' => {
+        %default_vars,
         articles => $articles,
         tag      => $tag
       },
