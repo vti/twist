@@ -76,7 +76,7 @@ sub _data {
 
     my $data = $self->{file}->slurp;
 
-    $data =~ s/^(.*?): (.*?)\n\n//ms;
+    $data =~ s/^(.*?): (.*?)\r?\n\r?\n//ms;
 
     my $preprocessed = $self->{preprocessor}->parse($data);
 
@@ -90,7 +90,7 @@ sub _metadata {
 
     my $content = $self->{file}->slurp;
 
-    while ($content =~ s/^(.*?): (.*)\n?//) {
+    while ($content =~ s/^(.*?): (.*)\r?\n?//) {
         my ($key, $value) = (lc($1), $2);
 
         $metadata->{$key} = $value;
