@@ -11,7 +11,7 @@ use Twist::TagCloud;
 
 our $VERSION = '0.1';
 
-my %default_vars = (uri_escape => sub { URI::Escape::uri_escape($_[1]) });
+my %default_vars = (uri_escape => sub { URI::Escape::uri_escape_utf8($_[1]) });
 
 my $articles_root = File::Spec->catfile(setting('appdir'), 'articles');
 my $drafts_root   = File::Spec->catfile(setting('appdir'), 'drafts');
