@@ -17,6 +17,7 @@ WriteMakefile(
         'Dancer::Template::Caml' => 0.009002,
         'Test::Spec'             => 0,
         'YAML'                   => 0,
+        'Test::Spec'             => 0,
     },
     dist  => {COMPRESS => 'gzip -9f', SUFFIX => 'gz',},
     clean => {FILES    => 'Twist-*'},
