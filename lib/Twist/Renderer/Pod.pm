@@ -32,9 +32,9 @@ sub render {
            my $t = $1;
            my $attr = '';
 
-           #if ($t =~ s/^\s*# no-run//) {
-               #$attr .= qq( class="code");
-           #}
+           if ($t !~ s/^\s*# no-perl//) {
+               $attr .= qq( class="perl");
+           }
 
            $t =~ s|^[^\S\n]{4}||gms;
 

@@ -65,7 +65,7 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 var editors = [];
-                $('pre').each(function() {
+                $('pre.perl').each(function() {
                     $(this).replaceWith('<textarea class="code perl">' + $(this).text() + '</textarea>');
                 });
                 $('textarea').each(function() {
