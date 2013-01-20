@@ -71,3 +71,14 @@ span#about {
     border-top:#ccc 1px solid;
     height:2em;
 }
+
+.CodeMirror {
+    border: 1px solid #eee;
+    font-size:12px;
+    height: auto;
+}
+.CodeMirror-scroll {
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: auto;
+}

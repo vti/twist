@@ -4,6 +4,7 @@
         <title>{{#title}}{{title}}{{/title}}{{^title}}{{settings.twist.title}}{{/title}}</title>
         <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.min.css" type="text/css" />
+        <link rel="stylesheet" href="/css/codemirror.css" type="text/css" />
         <link rel="stylesheet" href="/css/styles.css" type="text/css" />
         <link rel="alternate" type="application/rss+xml" title="{{settings.twist.title}}" href="/index.rss" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,6 +57,23 @@
             <div class="span2">&nbsp;</div>
         </div>
         </div>
+
+        <script type="text/javascript" src="/javascripts/jquery.js"></script>
+        <script type="text/javascript" src="/javascripts/codemirror.js"></script>
+        <script type="text/javascript" src="/javascripts/perl.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var editors = [];
+                $('pre').each(function() {
+                    $(this).replaceWith('<textarea class="code perl">' + $(this).text() + '</textarea>');
+                });
+                $('textarea').each(function() {
+                    var editor = CodeMirror.fromTextArea(this, {readOnly: true, lineNumbers: true});
+                    editors.push(editor);
+                });
+            });
+        </script>
 
         {{#settings.twist.urchin}}
         <script type="text/javascript">
