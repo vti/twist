@@ -9,6 +9,7 @@
 
 {{>index-pager}}
 
+{{#settings.twist.disqus}}
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = '{{settings.twist.disqus.shortname}}'; // required: replace example with your forum shortname
@@ -21,3 +22,4 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
+{{/settings.twist.disqus}}
