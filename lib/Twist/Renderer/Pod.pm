@@ -26,6 +26,21 @@ sub render {
     $output =~ s/<a name='___top' class='dummyTopAnchor'\s*?><\/a>\n//g;
     $output =~ s/<a class='u'.*?name=".*?"\s*>(.*?)<\/a>/$1/sg;
 
+    $output =~
+      s{<pre>(.*?)</pre>}
+       {
+           my $t = $1;
+           my $attr = '';
+
+           #if ($t =~ s/^\s*# no-run//) {
+               #$attr .= qq( class="code");
+           #}
+
+           $t =~ s|^[^\S\n]{4}||gms;
+
+           qq{<pre$attr>$t</pre>}
+       }msge;
+
     return $output;
 }
 
