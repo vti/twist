@@ -17,7 +17,7 @@ my $articles_root = File::Spec->catfile(setting('appdir'), 'articles');
 my $drafts_root   = File::Spec->catfile(setting('appdir'), 'drafts');
 my $pages_root    = File::Spec->catfile(setting('appdir'), 'pages');
 
-before_template sub {
+hook 'before_template_render' => sub {
     my $tokens = shift;
 
     my $config = $tokens->{settings}->{twist};
